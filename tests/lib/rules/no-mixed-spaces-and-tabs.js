@@ -50,6 +50,16 @@ eslintTester.addRuleTest("lib/rules/no-mixed-spaces-and-tabs", {
             ]
         },
         {
+            code: "x =\ty + 5",
+            errors: [
+                {
+                    message: "Mixed spaces and tabs.",
+                    type: "Program",
+                    line: 1
+                }
+            ]
+        },
+        {
             code: "\t var x = 5, y = 2, z = 5;\n\n\t \tvar j =\t x + y;\nz *= j;",
             errors: [
                 {
